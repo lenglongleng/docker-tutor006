@@ -12,8 +12,7 @@ RUN apt-get -y update \
 RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/
 RUN docker-php-ext-install mysqli gd
 
-RUN a2enmod
-RUN rewrite
+RUN a2enmod rewrite
 
 COPY ./index.php /var/www/html/index.php
 VOLUME ["/var/www/html"]
